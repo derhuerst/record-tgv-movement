@@ -30,4 +30,16 @@ const showError = (err) => {
 	process.exit(1)
 }
 
-// todo
+const pump = require('pump')
+const createStream = require('.')
+const {stringify} = require('ndjson')
+
+pump(
+	createStream(),
+	stringify(),
+	process.stdout,
+	(err) => {
+		console.error(err)
+		process.exit(1)
+	}
+)
