@@ -1,0 +1,33 @@
+{
+	"name": "record-tgv-movement",
+	"description": "Record the movement of any TGV using the on-board WiFi.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"bin": {
+		"record-tgv-movement": "./bin.js"
+	},
+	"files": [
+		"bin.js",
+		"index.js"
+	],
+	"keywords": [
+		"tgv",
+		"sncf",
+		"portal",
+		"train",
+		"track",
+		"gps",
+		"gpx"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/record-tgv-movement",
+	"repository": "derhuerst/record-tgv-movement",
+	"bugs": "https://github.com/derhuerst/record-tgv-movement/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=10"
+	},
+	"dependencies": {
+		"mri": "^1.1.4"
+	}
+}
