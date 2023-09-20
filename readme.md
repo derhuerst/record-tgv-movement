@@ -44,6 +44,13 @@ The JSON format matches [`record-ice-movement`](https://npmjs.com/package/record
 ```
 
 
+## Related
+
+- [`sncf-wifi-portal-client`](https://github.com/derhuerst/sncf-wifi-portal-client) – Query information from the [SNCF WiFi portal](https://en.oui.sncf/en/tgv/services/wifi-onboard) in French TGV trains.
+- [`record-ice-movement`](https://github.com/derhuerst/record-ice-movement) – Record the movement of any [ICE](https://en.wikipedia.org/wiki/Intercity-Express) using the on-board WiFi.
+- [`record-flixbus-movement`](htttps://github.com/derhuerst/record-flixbus-movement) – Command-line tool to record the movement of a [Flixbus](https://flixbus.de) coach using the on-board WiFi.
+
+
 ## Contributing
 
 If you have a question or have difficulties using `record-tgv-movement`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, refer to [the issues page](https://github.com/derhuerst/record-tgv-movement/issues).
