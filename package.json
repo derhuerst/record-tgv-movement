@@ -1,7 +1,7 @@
 {
 	"name": "record-tgv-movement",
 	"description": "Record the movement of any TGV using the on-board WiFi.",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"main": "index.js",
 	"bin": {
 		"record-tgv-movement": "./bin.js"

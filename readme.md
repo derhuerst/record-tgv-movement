@@ -57,6 +57,7 @@ The JSON format matches [`record-ice-movement`](https://npmjs.com/package/record
 - [`ouifi-portal-client`](https://github.com/derhuerst/ouifi-portal-client) – Query information from the *OUFI* WiFi portal in French *OuiGo* TGV trains.
 - [`record-ice-movement`](https://github.com/derhuerst/record-ice-movement) – Record the movement of any [ICE](https://en.wikipedia.org/wiki/Intercity-Express) using the on-board WiFi.
 - [`record-flixbus-movement`](htttps://github.com/derhuerst/record-flixbus-movement) – Command-line tool to record the movement of a [Flixbus](https://flixbus.de) coach using the on-board WiFi.
+- [`record-cd-train-movement`](https://github.com/derhuerst/record-cd-train-movement) – Record the movement of a [České Dráhy (Czech Railways)](https://en.wikipedia.org/wiki/České_dráhy) train using its on-board WiFi.
 
 
 ## Contributing
