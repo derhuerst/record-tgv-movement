@@ -48,7 +48,6 @@ const createPositionsStream = (interval = 3 * 1000) => {
 				longitude: _.longitude,
 				heading: _.heading,
 				precision: _.fix,
-				latitude: _.latitude,
 				serverTime: _.timestamp * 1000,
 				clientTime: t
 			})

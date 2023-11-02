@@ -34,5 +34,12 @@
 		"ouifi-portal-client": "^1.0.0",
 		"p-retry": "^4.6.2",
 		"sncf-wifi-portal-client": "^1.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.32.0"
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"prepublishOnly": "npm run lint"
 	}
 }
