@@ -4,6 +4,7 @@ const createDebug = require('debug')
 const pRetry = require('p-retry')
 const {Readable} = require('stream')
 const sncfWifiPortal = require('sncf-wifi-portal-client')
+const ouifiPortal = require('ouifi-portal-client')
 
 const debugPortal = createDebug('record-tgv-movement:portal')
 
@@ -63,6 +64,11 @@ const createPositionsStream = (interval = 3 * 1000) => {
 			'sncf-wifi-portal-client',
 			sncfWifiPortal,
 			sncfWifiPortal.connectionStatus,
+		),
+		checkIfPortalWorks(
+			'ouifi-portal-client',
+			ouifiPortal,
+			ouifiPortal.networkQuality,
 		),
 	])
 	.then((_portal) => {

@@ -1,6 +1,6 @@
 # record-tgv-movement
 
-**Record the movement of any [TGV](https://en.wikipedia.org/wiki/TGV) using the [on-board WiFi](https://www.sncf.com/fr/offres-voyageurs/tgv/actualites/connectez-vous-pendant-votre-voyage).**
+**Record the movement of any [TGV](https://en.wikipedia.org/wiki/TGV) using the on-board WiFi.**
 
 [![npm version](https://img.shields.io/npm/v/record-tgv-movement.svg)](https://www.npmjs.com/package/record-tgv-movement)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/record-tgv-movement.svg)
@@ -10,6 +10,7 @@
 There is more than one kind of WiFi portal in TGV trains, and they have slightly different APIs:
 
 - the [*SNCF WiFi* portal](https://www.sncf.com/fr/offres-voyageurs/tgv/actualites/connectez-vous-pendant-votre-voyage) (SSID `_SNCF_WIFI_INOUI`) on [*inOui* TGVs](https://en.wikipedia.org/wiki/TGV_inOui)
+- the [*OUIFI* portal](https://www.ouigo.com/content/ouifi) (SSID `OUIFI`) on [*OuiGo* TGVs](https://en.wikipedia.org/wiki/Ouigo)
 
 `record-tgv-movement` tries to detect which portal you're connected to: It tries to connect to each portal using the respective client (see [*Related*](#related)), and the first to succeed will be used from then on.
 
@@ -53,6 +54,7 @@ The JSON format matches [`record-ice-movement`](https://npmjs.com/package/record
 ## Related
 
 - [`sncf-wifi-portal-client`](https://github.com/derhuerst/sncf-wifi-portal-client) – Query information from the [SNCF WiFi portal](https://en.oui.sncf/en/tgv/services/wifi-onboard) in French TGV trains.
+- [`ouifi-portal-client`](https://github.com/derhuerst/ouifi-portal-client) – Query information from the *OUFI* WiFi portal in French *OuiGo* TGV trains.
 - [`record-ice-movement`](https://github.com/derhuerst/record-ice-movement) – Record the movement of any [ICE](https://en.wikipedia.org/wiki/Intercity-Express) using the on-board WiFi.
 - [`record-flixbus-movement`](htttps://github.com/derhuerst/record-flixbus-movement) – Command-line tool to record the movement of a [Flixbus](https://flixbus.de) coach using the on-board WiFi.
 

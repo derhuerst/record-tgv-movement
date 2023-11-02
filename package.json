@@ -31,6 +31,7 @@
 		"debug": "^4.3.4",
 		"mri": "^1.1.4",
 		"ndjson": "^1.5.0",
+		"ouifi-portal-client": "^1.0.0",
 		"p-retry": "^4.6.2",
 		"sncf-wifi-portal-client": "^1.0.0"
 	}
