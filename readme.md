@@ -7,6 +7,12 @@
 [![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
+There is more than one kind of WiFi portal in TGV trains, and they have slightly different APIs:
+
+- the [*SNCF WiFi* portal](https://www.sncf.com/fr/offres-voyageurs/tgv/actualites/connectez-vous-pendant-votre-voyage) (SSID `_SNCF_WIFI_INOUI`) on [*inOui* TGVs](https://en.wikipedia.org/wiki/TGV_inOui)
+
+`record-tgv-movement` tries to detect which portal you're connected to: It tries to connect to each portal using the respective client (see [*Related*](#related)), and the first to succeed will be used from then on.
+
 
 ## Installation
 

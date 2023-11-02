@@ -1,7 +1,23 @@
 'use strict'
 
+const createDebug = require('debug')
+const pRetry = require('p-retry')
 const {Readable} = require('stream')
-const portal = require('sncf-wifi-portal-client')
+const sncfWifiPortal = require('sncf-wifi-portal-client')
+
+const debugPortal = createDebug('record-tgv-movement:portal')
+
+// find any portal that does not fail with `ENOTFOUND` or request timeouts
+const checkIfPortalWorks = async (name, portal, checkIfWorking) => {
+	try {
+		const info = await pRetry(checkIfWorking, {minTimeout: 1000, retries: 3})
+		debugPortal(name + ' seems to work', info)
+		return portal
+	} catch (err) {
+		debugPortal(name + ' doesn\'t seem to work', err)
+		throw err
+	}
+}
 
 const createPositionsStream = (interval = 3 * 1000) => {
 	if (
@@ -11,6 +27,8 @@ const createPositionsStream = (interval = 3 * 1000) => {
 	) {
 		throw new Error('interval must be an integer > 0.')
 	}
+
+	let portal = null
 
 	const out = new Readable({
 		objectMode: true,
@@ -39,7 +57,22 @@ const createPositionsStream = (interval = 3 * 1000) => {
 		})
 	}
 
-	setInterval(fetch, interval)
+	// todo [breaking]: use async/await here
+	Promise.any([
+		checkIfPortalWorks(
+			'sncf-wifi-portal-client',
+			sncfWifiPortal,
+			sncfWifiPortal.connectionStatus,
+		),
+	])
+	.then((_portal) => {
+		portal = _portal
+		setInterval(fetch, interval)
+	})
+	.catch((err) => {
+		out.emit('error', err)
+	})
+
 	return out
 }
 
